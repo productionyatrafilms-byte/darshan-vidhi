@@ -1,0 +1,1365 @@
+/* =========================================================
+   FONTS
+========================================================= */
+
+@font-face {
+  font-family: "BalooRegular";
+  src: url("../../fonts/Baloo Regular 400.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Literata";
+  src: url("../../fonts/Literata-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "AbhayaLibre";
+  src: url("../../fonts/AbhayaLibre-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ITFDevanagari";
+  src: url("../../fonts/ITFDevanagari.ttc") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NotoSansGujaratiRegular";
+  src: url("../../fonts/NotoSansGujarati-Regular.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+body {
+  position: relative;
+
+  width: 100vw !important;
+  height: 100vh;
+
+  background-image: url("../images/bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+
+  overflow: hidden;
+
+  opacity: 1;
+
+  transition:
+    opacity 0.5s ease;
+}
+
+
+/* =========================================================
+   LANGUAGE FONTS
+========================================================= */
+
+body[data-lang="hi"] {
+  font-family: "ITFDevanagari" !important;
+}
+
+body[data-lang="gu"] {
+  font-family: "NotoSansGujaratiRegular" !important;
+}
+
+
+/* =========================================================
+   HOME BUTTON
+========================================================= */
+
+.home-btn {
+  position: fixed;
+
+  top: 2.5vw;
+  left: 4%;
+
+  width: 3.5vw;
+  height: 3.5vw;
+
+  background-image: url("./../images/home.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  z-index: 5000;
+
+  cursor: pointer;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translateX(-8vw);
+
+  transition:
+    transform 1s ease,
+    opacity 0.8s ease,
+    visibility 0.8s ease,
+    background-image 0.3s ease-in-out;
+}
+
+.home-btn:hover {
+  background-image: url("./../images/home-hov.png");
+}
+
+
+/* =========================================================
+   PAGE TITLE
+========================================================= */
+
+.page-title {
+  position: absolute;
+
+  left: 50%;
+  top: 2vw;
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  width: 35vw;
+  height: 3.5vw;
+
+  padding: 2vw 1vw;
+
+  border-radius: 10vw;
+
+  background-color: #FFDEA0;
+
+  border: 0.2vw solid #FFC400;
+
+  z-index: 4000;
+
+  opacity: 0;
+
+  transform: translate(-50%, -150%);
+
+  transition:
+    transform 1s ease,
+    opacity 0.7s ease;
+}
+
+.page-title span {
+  color: #761FB2;
+
+  font-size: 3vw;
+
+  font-family: "Literata";
+
+  text-shadow:
+    0 0.2vw 0.2vw rgba(0, 0, 0, 0.479);
+}
+
+.page-title img {
+  width: 2.5vw;
+
+  display: block;
+
+  object-fit: contain;
+}
+
+body[data-lang="hi"] .page-title span {
+  font-size: 2.8vw;
+}
+
+body[data-lang="gu"] .page-title span {
+  font-size: 2.65vw;
+}
+
+
+/* =========================================================
+   LANGUAGE CONTAINER
+========================================================= */
+
+.language-container {
+  position: fixed;
+
+  top: 2.5vw;
+  right: 5%;
+
+  display: flex;
+
+  width: 9vw;
+  height: auto;
+
+  padding: 0.2vw 0.3vw;
+
+  justify-content: space-between;
+  align-items: center;
+
+  font-family: "BalooRegular";
+
+  border: 0.2vw solid white;
+
+  background-color: #A361FF;
+
+  border-radius: 50vw;
+
+  pointer-events: auto;
+
+  z-index: 5000;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translateX(14vw);
+
+  transition:
+    transform 1s ease,
+    opacity 0.8s ease,
+    visibility 0.8s ease;
+}
+
+.language-container div {
+  width: 2.5vw;
+  height: 2.5vw;
+
+  font-size: 1.6vw;
+
+  text-align: center;
+
+  border: 0.2vw solid white;
+
+  background: #A361FF !important;
+
+  color: white;
+
+  cursor: pointer;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+
+  font-family:
+    "BalooRegular",
+    sans-serif;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.language-container div:hover,
+.language-container div.active {
+  background-color: white !important;
+
+  color: #A361FF;
+
+  transform: scale(1.05);
+}
+
+
+/* =========================================================
+   CLICK MESSAGE
+========================================================= */
+
+.click {
+  position: absolute;
+
+  left: 50%;
+
+  top: 7vw;
+
+  transform: translateX(-50%);
+
+  font-family: "BalooRegular";
+
+  font-size: 1.2vw;
+
+  color: #761FB2;
+
+  z-index: 3000;
+
+  transition:
+    opacity 0.5s ease,
+    visibility 0.5s ease;
+}
+
+
+/* =========================================================
+   LEFT + RIGHT DECORATION
+========================================================= */
+
+.left-img,
+.right-img {
+  position: absolute;
+
+  width: 20vw;
+
+  top: 50%;
+
+  z-index: 4;
+}
+
+
+.left-img {
+  left: 1vw;
+
+  opacity: 0;
+
+  transform:
+    translateY(-50%) scale(0);
+
+  transform-origin: left center;
+
+  transition:
+    transform 1.2s ease,
+    opacity 0.7s ease;
+}
+
+
+.right-img {
+  right: 1vw;
+
+  opacity: 0;
+
+  transform:
+    translateY(-50%) scale(0);
+
+  transform-origin: right center;
+
+  transition:
+    transform 1.2s ease,
+    opacity 0.7s ease;
+}
+
+
+/* =========================================================
+   BOTTOM IMAGE
+========================================================= */
+
+.bottom-img {
+  position: absolute;
+
+  width: 30vw;
+
+  bottom: 0vw;
+  left: 50%;
+
+  z-index: 10;
+
+  opacity: 0;
+
+  transform:
+    translateX(-50%) scale(0);
+
+  transform-origin: center bottom;
+
+  transition:
+  bottom 0.5s ease,
+    transform 1.2s ease,
+    opacity 0.7s ease;
+}
+
+
+/* =========================================================
+   CENTER IMAGE
+========================================================= */
+
+.center-img {
+  position: absolute;
+
+  width: 37%;
+
+  bottom: 0vw;
+  left: 50%;
+
+  transform:
+    translateX(-50%) scale(1);
+
+  transform-origin: center bottom;
+
+  z-index: 5;
+
+  transition:
+    bottom 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* =========================================================
+   BOY
+========================================================= */
+
+.boy {
+  position: absolute;
+
+  width: 20%;
+
+  bottom: 0vw;
+  left: 50%;
+
+  transform:
+    translateX(-50%) scale(0);
+
+  transform-origin: bottom center;
+
+  z-index: 25;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transition:
+    transform 1s ease,
+    bottom 1s ease,
+    opacity 0.8s ease,
+    visibility 0.8s ease;
+}
+
+
+/* =========================================================
+   ENTER BUTTON
+========================================================= */
+
+.enter-btn {
+  position: absolute;
+
+  left: 50%;
+  bottom: 2vw;
+
+  padding:
+    0.1vw 1.8vw;
+
+  z-index: 100;
+
+  background:
+    linear-gradient(180deg,
+      #FFD0A9 0%,
+      #FFA659 100%);
+
+  color: #ffffff;
+
+  border:
+    0.2vw solid #FFD0A9;
+
+  border-radius: 4vw;
+
+  font-size: 1.5vw;
+
+  font-family: "BalooRegular";
+
+  cursor: pointer;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transform:
+    translateX(-50%) scale(0.8);
+
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease,
+    bottom 1s ease,
+    visibility 0.5s ease,
+    color 0.3s ease-in-out,
+    background 0.3s ease-in-out;
+}
+
+.enter-btn:hover {
+  background:
+    linear-gradient(180deg,
+      #FFF5EC 0%,
+      #FFC592 100%);
+
+  color: #B73DE0 !important;
+}
+
+
+/* =========================================================
+   INITIAL PAGE LOAD ANIMATIONS
+========================================================= */
+
+body.page-loaded .home-btn {
+  opacity: 1;
+
+  visibility: visible;
+
+  transform:
+    translateX(0);
+}
+
+
+body.page-loaded .language-container {
+  opacity: 1;
+
+  visibility: visible;
+
+  transform:
+    translateX(0);
+}
+
+
+body.page-loaded .left-img {
+  opacity: 1;
+
+  transform:
+    translateY(-50%) scale(1);
+}
+
+
+body.page-loaded .right-img {
+  opacity: 1;
+
+  transform:
+    translateY(-50%) scale(1);
+}
+
+
+body.page-loaded .bottom-img {
+  opacity: 1;
+
+  transform:
+    translateX(-50%) scale(1);
+}
+
+
+body.page-loaded .page-title {
+  opacity: 1;
+
+  transform:
+    translate(-50%, 0);
+}
+
+
+body.page-loaded .boy {
+  transform:
+    translateX(-50%) scale(1);
+
+  opacity: 1;
+
+  visibility: visible;
+
+  bottom: 0vw;
+}
+
+
+body.page-loaded .enter-btn {
+  opacity: 1;
+
+  visibility: visible;
+
+  transform:
+    translateX(-50%) scale(1);
+
+  transition:
+    opacity 0.5s ease 1s,
+    visibility 0.5s ease 1s,
+    transform 0.5s ease 1s,
+    bottom 1s ease,
+    color 0.3s ease-in-out,
+    background 0.3s ease-in-out;
+}
+
+
+body.page-loaded .enter-btn:hover {
+  transform:
+    translateX(-50%) scale(1.06);
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease-in-out,
+    background 0.3s ease-in-out;
+}
+
+
+/* =========================================================
+   AFTER ENTER BUTTON
+========================================================= */
+
+
+/*
+    CENTER IMAGE
+
+    Moves downward to approximately -22vw
+    and scales up considerably.
+*/
+
+body.experience-open .center-img {
+  bottom: -65vw;
+
+  transform:
+    translateX(-50%) scale(2.5);
+}
+
+
+/*
+    BOTTOM IMAGE
+    scale → 1.3
+*/
+
+body.experience-open .bottom-img {
+  transform:
+    translateX(-50%) scale(2);
+    bottom: -20vw;
+    opacity: 0.2;
+}
+
+
+/*
+    LEFT DECORATION
+    scale → 0.7
+*/
+
+body.experience-open .left-img {
+  transform:
+    translateY(-50%) scale(0.5);
+}
+
+
+/*
+    RIGHT DECORATION
+    scale → 0.7
+*/
+
+body.experience-open .right-img {
+  transform:
+    translateY(-50%) scale(0.5);
+}
+
+
+/*
+    BOY MOVES DOWN
+*/
+
+body.experience-open .boy {
+  bottom: -25vw;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transform:
+    translateX(-50%) translateY(10vw) scale(0.9);
+}
+
+
+/*
+    ENTER BUTTON MOVES DOWN
+*/
+
+body.experience-open .enter-btn {
+  bottom: -10vw;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transform:
+    translateX(-50%) translateY(10vw) scale(0.8);
+
+  transition:
+    bottom 0.9s ease,
+    opacity 0.5s ease,
+    visibility 0.5s ease,
+    transform 0.9s ease;
+}
+
+
+body.experience-open .click {
+  opacity: 0;
+
+  visibility: hidden;
+}
+
+
+/* =========================================================
+   MAIN SWIPER STAGE
+========================================================= */
+
+.swiper-stage {
+  position: absolute;
+
+  width: 67vw;
+  height: 39vw;
+
+  left: 50%;
+
+  /*
+        Starts above screen
+    */
+  bottom: 100vw;
+
+  transform:
+    translate(-50%, -50%);
+
+  z-index: 1000;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transition:
+    bottom 1.15s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.6s ease,
+    visibility 0.6s ease;
+}
+
+
+/*
+    Swiper comes from TOP → DOWN
+*/
+
+body.experience-open .swiper-stage {
+    transform:
+    translate(-50%, -50%);
+  bottom: -20vw;
+
+  opacity: 1;
+
+  visibility: visible;
+}
+
+
+/* =========================================================
+   YELLOW VIDEO FRAME
+========================================================= */
+
+.swiper-wrapper-custom {
+  position: relative;
+
+  width: 45vw;
+  height: 28vw;
+
+  margin:
+    0 auto;
+
+  border:
+    0.55vw solid #FFC400;
+
+  border-radius: 3vw;
+
+  background:
+    #FFC400;
+
+  box-shadow:
+    0 1.1vw 1.8vw rgba(45, 14, 65, 0.28);
+
+  overflow: hidden;
+
+  z-index: 10;
+}
+
+
+/* =========================================================
+   VIDEO WINDOW
+========================================================= */
+
+.video-window {
+  position: absolute;
+
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  border-radius: 2.4vw;
+
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   VIDEO TRACK
+========================================================= */
+
+.video-track {
+  display: flex;
+
+  width: 100%;
+  height: 100%;
+
+  transform:
+    translateX(0%);
+
+  transition:
+    transform 0.9s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+
+.video-slide {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  flex:
+    0 0 100%;
+
+  overflow: hidden;
+}
+
+
+.video-slide video {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   SMALL TITLE PILL OVER VIDEO
+========================================================= */
+
+.slide-heading-window {
+  position: absolute;
+
+  width: 20vw;
+  height: 3vw;
+
+  left: 50%;
+  bottom: 0.7vw;
+
+  transform:
+    translateX(-50%);
+
+  overflow: hidden;
+
+  border-radius: 50vw;
+
+  z-index: 30;
+
+  background:
+    linear-gradient(180deg,
+      #CA8DFF 0%,
+      #A85EFF 100%);
+
+  border:
+    0.18vw solid rgba(255, 255, 255, 0.4);
+
+  box-shadow:
+    0 0.25vw 0.6vw rgba(73, 10, 108, 0.4);
+}
+
+
+.slide-heading-track {
+  width: 100%;
+  height: 100%;
+
+  transition:
+    transform 0.75s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+
+.slide-heading {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  flex:
+    0 0 100%;
+}
+
+
+.slide-heading span {
+  width: 90%;
+
+  text-align: center;
+
+  color: #ffffff;
+
+  font-family: "Literata";
+
+  font-size: 1.7vw;
+
+  line-height: 1;
+
+  text-shadow:
+    0 0.12vw 0.15vw rgba(51, 15, 76, 0.45);
+}
+
+
+body[data-lang="hi"] .slide-heading span {
+  font-family: "ITFDevanagari";
+
+  font-size: 1.7vw;
+}
+
+
+body[data-lang="gu"] .slide-heading span {
+  font-family: "NotoSansGujaratiRegular";
+
+  font-size: 1.6vw;
+}
+
+
+/* =========================================================
+   PURPLE TEXT AREA
+========================================================= */
+
+.text-window {
+  position: absolute;
+
+  width: 67vw;
+  height: 10.5vw;
+
+  left: 50%;
+  bottom: 0;
+
+  transform:
+    translateX(-50%);
+
+  overflow: hidden;
+  z-index: 5;
+
+  
+}
+
+
+/*
+    Decorative rounded purple shape,
+    similar to your screenshot.
+*/
+
+
+
+/* =========================================================
+   TEXT TRACK
+========================================================= */
+
+.text-track {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 2;
+
+  transition:
+    transform 0.75s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+
+/*
+    Each item is exactly
+    the height of text-window.
+
+    This makes the text move VERTICALLY.
+*/
+
+.text-slide {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  padding:
+    2.1vw 5vw 0.7vw;
+
+  flex:
+    0 0 100%;
+}
+
+
+.text-slide p {
+  width: 100%;
+
+  color: #ffffff;
+
+  text-align: center;
+
+  font-family: "BalooRegular";
+
+  font-size: 1.75vw;
+
+  line-height: 1.3;
+
+  text-shadow:
+    0 0.1vw 0.12vw rgba(0, 0, 0, 0.18);
+}
+
+
+body[data-lang="hi"] .text-slide p {
+  font-family: "ITFDevanagari";
+  font-size: 1.85vw;
+}
+
+
+body[data-lang="gu"] .text-slide p {
+  font-family: "NotoSansGujaratiRegular";
+  font-weight: 700!important;
+  font-size: 1.75vw;
+}
+
+
+/* =========================================================
+   IMPORTANT:
+   VERTICAL FLEX TRACKS
+========================================================= */
+
+.slide-heading-track,
+.text-track {
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+/* =========================================================
+   NAVIGATION BUTTONS
+========================================================= */
+
+.slide-nav {
+  position: absolute;
+
+  top: 13vw;
+
+  width: 5vw;
+  height: 5vw;
+
+  border: none;
+
+  outline: none;
+
+  background-color: transparent;
+
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  cursor: pointer;
+
+  z-index: 100;
+
+  transition:
+    opacity 0.35s ease,
+    visibility 0.35s ease,
+    transform 0.3s ease;
+}
+
+
+.slide-nav:hover {
+  transform:
+    scale(1.08);
+}
+
+
+/* =========================================================
+   PREVIOUS BUTTON
+========================================================= */
+
+.prev-btn {
+  left: -0.3vw;
+
+  background-image:
+    url("../images/prev-btn.png");
+}
+
+
+.prev-btn:hover {
+  background-image:
+    url("../images/prev-btn-hov.png");
+}
+
+
+/* =========================================================
+   NEXT BUTTON
+========================================================= */
+
+.next-btn {
+  right: -0.3vw;
+
+  background-image:
+    url("../images/next-btn.png");
+}
+
+
+.next-btn:hover {
+  background-image:
+    url("../images/next-btn-hov.png");
+}
+
+
+/* =========================================================
+   HIDE NAV BUTTON
+========================================================= */
+
+.slide-nav.hidden {
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transform:
+    scale(0.7);
+}
+
+
+/*
+    Prev hidden initially.
+*/
+
+.prev-btn {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+
+body.experience-open .prev-btn:not(.hidden) {
+  opacity: 1;
+
+  visibility: visible;
+
+  pointer-events: auto;
+}
+
+
+/*
+    Next appears when experience opens
+*/
+
+.next-btn {
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+body.experience-open .next-btn:not(.hidden) {
+  opacity: 1;
+
+  visibility: visible;
+
+  pointer-events: auto;
+}
+
+
+/* =========================================================
+   PRANAM LINK
+========================================================= */
+
+.pranam-link {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 2vw;
+    bottom: 2vw;
+    width: 9vw;
+    height: auto;
+    text-decoration: none;
+    z-index: 9999;
+    pointer-events: auto;
+    cursor: pointer;
+    animation: pranamPop 1.2s ease-in-out infinite;
+    transform-origin: center;
+     opacity: 0;
+
+  visibility: hidden;
+  }
+    
+.pranam-link img {
+  position: relative;
+  width: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.pranam-link span {
+  position: absolute;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.3vw;
+  padding-right: 1vw;
+    font-family: "BalooRegular";
+
+}
+
+
+/* =========================================================
+   PRANAM LINK SHOW ONLY ON LAST SLIDE
+========================================================= */
+
+.pranam-link.show {
+  opacity: 1;
+
+  visibility: visible;
+
+  pointer-events: auto;
+
+  transform:
+    scale(1);
+
+  animation:
+    pranamPop 1.3s ease-in-out infinite;
+}
+
+
+@keyframes pranamPop {
+
+  0% {
+    transform:
+      scale(1);
+  }
+
+  50% {
+    transform:
+      scale(1.08);
+  }
+
+  100% {
+    transform:
+      scale(1);
+  }
+
+}
+
+.pranam-container {
+  position: absolute;
+  width: 45vw;
+  height: auto;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pranam-container>.pranam-img {
+  position: relative;
+  width: 85%;
+  height: auto;
+  display: block;
+}
+
+.pranam-container>.pranam-img>img {
+  width: 100%;
+  display: block;
+}
+
+.pranam-img span {
+  z-index: 15;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  font-size: 3.4vw;
+  transform: translateX(-50%);
+  font-family: "BalooRegular";
+  color: #802922;
+}
+
+.pranam-container .home-btn-1 {
+  position: absolute;
+  top: 88%;
+  left: 35%;
+  transform: translateX(-50%);
+  width: 15vw;
+  height: auto;
+  transform: scale(1);
+  transition: transform 0.2s ease;
+}
+
+.home-btn-1:hover {
+  transform: scale(1.05);
+}
+
+.pranam-container .home-btn-1 img {
+  width: 100%;
+  display: block;
+}
+
+.home-btn-1 span {
+  z-index: 15;
+  position: absolute;
+  top: 45%;
+  left: 38%;
+  font-size: 2.5vw;
+  transform: translateY(-50%);
+  font-family: "BalooRegular";
+  color: #821b00;
+}
+
+.back-btn {
+  position: absolute;
+  left: 4%;
+  top: 4%;
+  width: 3vw;
+  height: 3vw;
+  background-color: #A361FF;
+  border: 0.25vw solid white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  transform: scale(1);
+  transition: transform 0.3s ease;
+  z-index: 50;
+}
+
+.back-btn i {
+  color: white;
+  font-size: 1vw;
+  transition: font-size 0.3s ease;
+}
+
+.back-btn:hover {
+  transform: scale(1.05);
+  background-color: white;
+}
+
+.back-btn:hover i {
+  font-size: 1.2vw;
+  color: #A361FF !important;
+}
