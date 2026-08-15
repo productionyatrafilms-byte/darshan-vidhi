@@ -1370,6 +1370,7 @@ body.experience-open .next-btn:not(.hidden) {
   .swiper-stage {
   width: 67vw;
   height: 36vw;
+  bottom: -30vw;
 }
 
 .swiper-wrapper-custom {
