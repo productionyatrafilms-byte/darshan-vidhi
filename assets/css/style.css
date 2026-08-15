@@ -77,8 +77,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  overflow: hidden;
 
   opacity: 1;
 
@@ -305,7 +304,7 @@ body[data-lang="gu"] .page-title span {
 
   font-family: "BalooRegular";
 
- font-size: clamp(13px, 1.2vw, 22px);
+  font-size: clamp(13px, 1.2vw, 22px);
 
   color: #761FB2;
 
@@ -387,7 +386,7 @@ body[data-lang="gu"] .page-title span {
   transform-origin: center bottom;
 
   transition:
-  bottom 0.5s ease,
+    bottom 0.5s ease,
     transform 1.2s ease,
     opacity 0.7s ease;
 }
@@ -426,7 +425,7 @@ body[data-lang="gu"] .page-title span {
   position: fixed;
 
   width: clamp(80px, 16vw, 16vw);
- font-size: clamp(13px, 1.2vw, 22px);
+  font-size: clamp(13px, 1.2vw, 22px);
 
   bottom: 0vw;
   left: 50%;
@@ -634,8 +633,8 @@ body.experience-open .center-img {
 body.experience-open .bottom-img {
   transform:
     translateX(-50%) scale(2);
-    bottom: -20vw;
-    opacity: 0.2;
+  bottom: -20vw;
+  opacity: 0.2;
 }
 
 
@@ -746,7 +745,7 @@ body.experience-open .click {
 */
 
 body.experience-open .swiper-stage {
-    transform:
+  transform:
     translate(-50%, -50%);
   bottom: -20vw;
 
@@ -958,7 +957,7 @@ body[data-lang="gu"] .slide-heading span {
   overflow: hidden;
   z-index: 5;
 
-  
+
 }
 
 
@@ -1036,7 +1035,7 @@ body[data-lang="hi"] .text-slide p {
 
 body[data-lang="gu"] .text-slide p {
   font-family: "NotoSansGujaratiRegular";
-  font-weight: 700!important;
+  font-weight: 700 !important;
   font-size: 1.75vw;
 }
 
@@ -1189,25 +1188,25 @@ body.experience-open .next-btn:not(.hidden) {
 ========================================================= */
 
 .pranam-link {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    right: 2vw;
-    bottom: 2vw;
-    width: 9vw;
-    height: auto;
-    text-decoration: none;
-    z-index: 9999;
-    pointer-events: auto;
-    cursor: pointer;
-    animation: pranamPop 1.2s ease-in-out infinite;
-    transform-origin: center;
-     opacity: 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 2vw;
+  bottom: 2vw;
+  width: 9vw;
+  height: auto;
+  text-decoration: none;
+  z-index: 9999;
+  pointer-events: auto;
+  cursor: pointer;
+  animation: pranamPop 1.2s ease-in-out infinite;
+  transform-origin: center;
+  opacity: 0;
 
   visibility: hidden;
-  }
-    
+}
+
 .pranam-link img {
   position: relative;
   width: 100%;
@@ -1222,7 +1221,7 @@ body.experience-open .next-btn:not(.hidden) {
   font-weight: bold;
   font-size: 1.3vw;
   padding-right: 1vw;
-    font-family: "BalooRegular";
+  font-family: "BalooRegular";
 
 }
 
@@ -1366,18 +1365,59 @@ body.experience-open .next-btn:not(.hidden) {
 }
 
 
-@media (max-width: 767px) {
+@media (max-width: 900px),
+(max-height: 550px) {
   .swiper-stage {
-  width: 67vw;
-  height: 36vw;
-  bottom: -30vw;
+    width: 67vw;
+    height: 33vw;
+    bottom: -40vw;
+  }
+
+  .swiper-wrapper-custom {
+    width: 40vw;
+    height: 22vw;
+  }
+
+  .text-window {
+    position: absolute;
+
+    width: 67vw;
+    height: 9vw;
+
+    left: 50%;
+    bottom: 3vw;
+
+    transform:
+      translateX(-50%);
+
+    overflow: hidden;
+    z-index: 5;
+
+  }
+
+
+  .text-slide p {
+    font-size: 1.6vw;
+  }
+
+
+  body[data-lang="hi"] .text-slide p {
+    font-size: 1.7vw;
+  }
+
+
+  body[data-lang="gu"] .text-slide p {
+    font-size: 1.6vw;
+  }
+
+
+  .slide-heading span {
+    width: 90%;
+    font-size: 1.5vw;
+  }
+
+  .text-slide {
+  padding:
+    1vw 2vw 0.1vw;
 }
-
-.swiper-wrapper-custom {
-  width: 40vw;
-  height: 23vw;
-}
-
-
-
 }
