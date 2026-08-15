@@ -70,7 +70,7 @@ body {
   position: relative;
 
   width: 100vw !important;
-  height: 100vh;
+  height: 100%;
 
   background-image: url("../images/bg.png");
   background-size: cover;
@@ -78,7 +78,7 @@ body {
   background-position: center;
   background-attachment: fixed;
 
-  overflow: hidden;
+  overflow-x: hidden;
 
   opacity: 1;
 
@@ -305,7 +305,7 @@ body[data-lang="gu"] .page-title span {
 
   font-family: "BalooRegular";
 
-  font-size: 1.2vw;
+ font-size: clamp(13px, 1.2vw, 22px);
 
   color: #761FB2;
 
