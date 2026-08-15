@@ -144,7 +144,7 @@ body[data-lang="gu"] {
 ========================================================= */
 
 .page-title {
-  position: absolute;
+  position: fixed;
 
   left: 50%;
   top: 2vw;
@@ -323,7 +323,7 @@ body[data-lang="gu"] .page-title span {
 
 .left-img,
 .right-img {
-  position: absolute;
+  position: fixed;
 
   width: 20vw;
 
@@ -370,7 +370,7 @@ body[data-lang="gu"] .page-title span {
 ========================================================= */
 
 .bottom-img {
-  position: absolute;
+  position: fixed;
 
   width: 30vw;
 
@@ -398,7 +398,7 @@ body[data-lang="gu"] .page-title span {
 ========================================================= */
 
 .center-img {
-  position: absolute;
+  position: fixed;
 
   width: 37%;
 
@@ -423,9 +423,10 @@ body[data-lang="gu"] .page-title span {
 ========================================================= */
 
 .boy {
-  position: absolute;
+  position: fixed;
 
-  width: 20%;
+  width: clamp(80px, 16vw, 16vw);
+ font-size: clamp(13px, 1.2vw, 22px);
 
   bottom: 0vw;
   left: 50%;
@@ -1362,4 +1363,20 @@ body.experience-open .next-btn:not(.hidden) {
 .back-btn:hover i {
   font-size: 1.2vw;
   color: #A361FF !important;
+}
+
+
+@media (max-width: 767px) {
+  .swiper-stage {
+  width: 67vw;
+  height: 36vw;
+}
+
+.swiper-wrapper-custom {
+  width: 40vw;
+  height: 23vw;
+}
+
+
+
 }
