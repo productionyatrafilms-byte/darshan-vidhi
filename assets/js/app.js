@@ -7,6 +7,25 @@ const DEFAULT_LANG = "English";
 const LANG_KEY = "selectedLanguage";
 let translations = {};
 let isNavigating = false;
+let landscapeAlertShown = false;
+
+function checkScreenSize() {
+  const isMobile =
+    /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+
+  if (isMobile && window.innerWidth < 768) {
+    if (!landscapeAlertShown) {
+      landscapeAlertShown = true;
+      alert("Please use Landscape!");
+    }
+  } else {
+    landscapeAlertShown = false;
+  }
+}
+
+window.addEventListener("load", checkScreenSize);
+window.addEventListener("resize", checkScreenSize);
+
 
 // audio files for each language
 const audioEn = new Audio("./assets/audio/Eng.mpeg");
