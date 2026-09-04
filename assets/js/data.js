@@ -1,0 +1,207 @@
+const data = {
+
+  "English": {
+
+    "title": "Darshan Vidhi",
+
+    "pranam": "Pranam",
+
+    "home": "Home",
+
+    "num-1": "1",
+
+    "num-2": "2",
+
+    "num-3": "3",
+
+    "num-4": "4",
+
+    "enter":"Enter",
+
+    "slide-1": "Namo Jinanam",
+
+    "slide-2": "First Nisihi",
+
+    "slide-3": "Namo Jinanam",
+
+    "slide-4": "Three Pradakshina",
+
+    "slide-5": "Second Nisihi",
+
+    "slide-6": "Stuti",
+
+    "slide-7": "Dravya Puja",
+
+    "slide-8": "Third Nisihi",
+
+    "slide-9": "Pachchakhan",
+
+    "slide-10": "Bhandar",
+
+    "slide-11": "Ghantnaad",
+
+    "slide-12": "Avassahi",
+
+    "slide-1.1": "Whenever we see Jin Mandir, Shikhar or Dhwaja, we must join \nour hands, bow our head and say 'Namo Jinanam'.",
+
+    "slide-1.2": "While entering the main entrance of Jin Mandir, we must say 'Nisihi'. Do not think about worldly issues after entering.",
+
+    "slide-1.3": "When we see Bhagwan, we must bow down, join our hands \nand say 'Namo Jinanam'.",
+
+    "slide-1.4": "Starting from the right side of the Bhagwan, we must perform pradakshina three times, while doing so, we must look down and say doha. Also any misplaced things must be kept in the proper place.",
+
+    "slide-1.5": "We must say the second 'Nisihi' in front of Gabhara. It means \nwe must not think or do any Mandir related work also.",
+
+    "slide-1.6": "We must join our hands & recite a stuti \nin front of Bhagwan.",
+
+    "slide-1.7": "We must do Dhoop, Deepak, Pankha, Darpan & Chamar \nin front of Bhagwan.",
+
+    "slide-1.8": "Before doing Chaityavandan, we must say \nthe Third 'Nisihi'.",
+
+    "slide-1.9": "We must take Pachchakhan according to \nour capacity.",
+
+    "slide-1.10": "We must offer money in Bhandar.",
+
+    "slide-1.11": "After Ghantnaad, we must come out of the Jin Mandir, without turning our back towards Bhagwan.",
+
+    "slide-1.12": "While coming out, we must say 'Avassahi' 3 times \nat the main entrance."
+
+  },
+
+  "Hindi": {
+
+    "title": "दर्शन विधि",
+
+    "pranam": "प्रणाम",
+
+    "home": "होम",
+
+    "num-1": "१",
+
+    "num-2": "२",
+
+    "num-3": "३",
+
+    "num-4": "४",
+
+    "enter": "प्रवेश करें",
+
+    "slide-1": "नमो जिणाणं",
+
+    "slide-2": "पहली निसीहि",
+
+    "slide-3": "नमो जिणाणं",
+
+    "slide-4": "तीन प्रदक्षिणा",
+
+    "slide-5": "दूसरी निसीहि",
+
+    "slide-6": "स्तुति",
+
+    "slide-7": "द्रव्य पूजा",
+
+    "slide-8": "तीसरी निसीहि",
+
+    "slide-9": "पच्चक्खाण",
+
+    "slide-10": "भंडार",
+
+    "slide-11": "घंटनाद",
+
+    "slide-12": "आवस्सहि",
+
+    "slide-1.1": "जब जिनमंदिर, शिखर या ध्वजा दिखे, तब दोनों हाथ जोड़कर, मस्तक झुकाकर \n'नमो जिणाणं' बोलें।",
+
+    "slide-1.2": "जिनमंदिर के मुख्य दरवाजे में प्रवेश करते समय 'निसीहि' बोलें \nऔर फिर घर के विचार न करें।",
+
+    "slide-1.3": "भगवान के दर्शन होने पर मस्तक झुकाकर और हाथ जोड़कर \n'नमो जिणाणं' बोलें।",
+
+    "slide-1.4": "भगवान की दाहिनी ओर से, नज़र नीचे रखते हुए, दोहे बोलते-बोलते भगवान को तीन प्रदक्षिणा दें। साथ ही, मंदिर में अव्यवस्थित पड़ी हुई चीजों को व्यवस्थित रूप से रखना चाहिए।",
+
+    "slide-1.5": "गंभारे के पास आकर दूसरी 'निसीहि' बोलनी चाहिए। अब मंदिर संबंधी \nकामकाज का भी त्याग करें।",
+
+    "slide-1.6": "भगवान के सामने हाथ जोड़कर \nस्तुति करनी चाहिए।",
+
+    "slide-1.7": "हमें भगवान के सामने धूप, दीपक, पंखा, दर्पण \nऔर चामर पूजा करनी चाहिए।",
+
+    "slide-1.8": "चैत्यवंदन करने से पहले तीसरी 'निसीहि' बोलें।",
+
+    "slide-1.9": "हमें यथाशक्ति पच्चक्खाण लेना चाहिए।",
+
+    "slide-1.10": "भंडार में पैसे भरें।",
+
+    "slide-1.11": "घंटनाद करके, भगवान की ओर \nपीठ किए बिना, जिनमंदिर से बाहर निकलें।",
+
+    "slide-1.12": "बाहर निकलते समय मंदिर के मुख्य द्वार पर \nतीन बार 'आवस्सहि' बोलना चाहिए।"
+
+  },
+
+  "Gujarati": {
+
+    "title": "દર્શન વિધિ",
+
+    "pranam": "પ્રણામ",
+
+    "home": "ઘર",
+
+    "num-1": "૧",
+
+    "num-2": "૨",
+
+    "num-3": "૩",
+
+    "num-4": "૪",
+
+    "enter": "પ્રવેશ કરો",
+
+    "slide-1": "નમો જિણાણં",
+
+    "slide-2": "પહેલી નિસીહિ",
+
+    "slide-3": "નમો જિણાણં",
+
+    "slide-4": "ત્રણ પ્રદક્ષિણા",
+
+    "slide-5": "બીજી નિસીહિ",
+
+    "slide-6": "સ્તુતિ",
+
+    "slide-7": "દ્રવ્યપૂજા",
+
+    "slide-8": "ત્રીજી નિસીહિ",
+
+    "slide-9": "પચ્ચક્ખાણ",
+
+    "slide-10": "ભંડાર",
+
+    "slide-11": "ઘંટનાદ",
+
+    "slide-12": "આવસ્સહિ",
+
+    "slide-1.1": "જ્યારે દેરાસર, તેનું શિખર કે ધ્વજા દેખાય, ત્યારે બે હાથ જોડીને, મસ્તક ઝુકાવીને \n'નમો જિણાણં' બોલવું.",
+
+    "slide-1.2": "દેરાસરના મુખ્ય દરવાજામાં પ્રવેશતી વખતે 'નિસીહિ' \nબોલવું અને તે પછી ઘરના વિચારો ન કરવા.",
+
+    "slide-1.3": "ભગવાનનાં દર્શન થાય ત્યારે મસ્તક ઝુકાવીને અને હાથ જોડીને 'નમો જિણાણં' કહેવું.",
+
+    "slide-1.4": "ભગવાનની જમણી બાજુથી, દુહા બોલતાં-બોલતાં, ભગવાનની ત્રણ પ્રદક્ષિણા દેવી. તે સાથે દેરાસરમાં કોઈ વસ્તુ અવ્યવસ્થિત પડેલી દેખાય તો તેને વ્યવસ્થિત રીતે મૂકવી.",
+
+    "slide-1.5": "ગભારા પાસે આવીને બીજી 'નિસીહિ' બોલવી. હવે દેરાસર સંબંધિત \nકામોનો પણ ત્યાગ કરવો.",
+
+    "slide-1.6": "ભગવાન સામે હાથ જોડીને \nસ્તુતિ બોલવી.",
+
+    "slide-1.7": "ભગવાન સામે ધૂપ, દીપક, પંખો, દર્પણ અને \nચામર પૂજા કરવી.",
+
+    "slide-1.8": "ચૈત્યવંદન કરતાં પહેલાં ત્રીજી 'નિસીહિ' બોલવી.",
+
+    "slide-1.9": "આપણે યથાશક્તિ પચ્ચક્ખાણ લેવા જોઈએ.",
+
+    "slide-1.10": "ભંડારમાં પૈસા પૂરવા.",
+
+    "slide-1.11": "ઘંટનાદ કરીને, ભગવાનની સામે પીઠ કર્યા વિના, દેરાસરની બહાર નીકળવું.",
+
+    "slide-1.12": "બહાર નીકળતી વખતે દેરાસરના મુખ્ય દ્વાર પર \nત્રણ વાર ‘આવસ્સહિ’ બોલવું જોઈએ."
+
+  }
+
+};

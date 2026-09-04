@@ -5,7 +5,8 @@ const topicLinks = document.querySelectorAll(".topic");
 
 const DEFAULT_LANG = "English";
 const LANG_KEY = "selectedLanguage";
-let translations = {};
+// translations come from assets/js/data.js, which must be loaded first
+let translations = typeof data !== "undefined" ? data : {};
 let isNavigating = false;
 let landscapeAlertShown = false;
 
@@ -98,22 +99,15 @@ function applyLanguage(lang, save = true) {
 
 // page fade in
 window.addEventListener("DOMContentLoaded", () => {
-  fetch("./assets/json/data.json")
-    .then((res) => res.json())
-    .then((data) => {
-      translations = data;
+  // Apply saved language immediately — no flash to English
+  const savedLang = getSavedLanguage();
+  applyLanguage(savedLang, false);
 
-      // Apply saved language immediately — no flash to English
-      const savedLang = getSavedLanguage();
-      applyLanguage(savedLang, false);
-
-      requestAnimationFrame(() => {
-        // Re-apply after first paint to be safe
-        applyLanguage(savedLang, false);
-        document.body.classList.add("page-loaded");
-      });
-    })
-    .catch((err) => console.error("Error loading translations:", err));
+  requestAnimationFrame(() => {
+    // Re-apply after first paint to be safe
+    applyLanguage(savedLang, false);
+    document.body.classList.add("page-loaded");
+  });
 });
 
 // topic click -> fade out -> navigate
