@@ -94,7 +94,7 @@
                             src="./assets/videos/1.mp4"
                             muted
                             playsinline
-                            preload="metadata">
+                            preload="auto">
                         </video>
                     </div>
 
@@ -104,7 +104,7 @@
                             src="./assets/videos/2.mp4"
                             muted
                             playsinline
-                            preload="metadata">
+                            preload="none">
                         </video>
                     </div>
 
@@ -114,7 +114,7 @@
                             src="./assets/videos/3.mp4"
                             muted
                             playsinline
-                            preload="metadata">
+                            preload="none">
                         </video>
                     </div>
 
@@ -124,7 +124,7 @@
                             src="./assets/videos/4.mp4"
                             muted
                             playsinline
-                            preload="metadata">
+                            preload="none">
                         </video>
                     </div>
 
@@ -134,7 +134,7 @@
                             src="./assets/videos/5.mp4"
                             muted
                             playsinline
-                            preload="metadata">
+                            preload="none">
                         </video>
                     </div>
 
@@ -144,7 +144,7 @@
                             src="./assets/videos/6.mp4"
                             muted
                             playsinline
-                            preload="metadata">
+                            preload="none">
                         </video>
                     </div>
 
@@ -154,7 +154,7 @@
                             src="./assets/videos/7.mp4"
                             muted
                             playsinline
-                            preload="metadata">
+                            preload="none">
                         </video>
                     </div>
 
@@ -164,7 +164,7 @@
                             src="./assets/videos/8.mp4"
                             muted
                             playsinline
-                            preload="metadata">
+                            preload="none">
                         </video>
                     </div>
 
@@ -174,7 +174,7 @@
                             src="./assets/videos/9.mp4"
                             muted
                             playsinline
-                            preload="metadata">
+                            preload="none">
                         </video>
                     </div>
 
@@ -184,7 +184,7 @@
                             src="./assets/videos/10.mp4"
                             muted
                             playsinline
-                            preload="metadata">
+                            preload="none">
                         </video>
                     </div>
 
@@ -194,7 +194,7 @@
                             src="./assets/videos/11.mp4"
                             muted
                             playsinline
-                            preload="metadata">
+                            preload="none">
                         </video>
                     </div>
 
@@ -204,7 +204,7 @@
                             src="./assets/videos/12.mp4"
                             muted
                             playsinline
-                            preload="metadata">
+                            preload="none">
                         </video>
                     </div>
 
@@ -424,7 +424,6 @@
     <script src="./assets/js/data.js"></script>
 
     <script src="./assets/js/app.js"></script>
-    <script src="./assets/js/djp.js"></script>
 
 
     <!-- =====================================================
@@ -788,6 +787,9 @@
                 videos.forEach((video, index) => {
 
                     video.pause();
+
+                    /* only the active slide's video loads; every other slide stays unloaded */
+                    video.preload = index === currentSlide ? "auto" : "none";
 
                     if (index !== currentSlide) {
 
